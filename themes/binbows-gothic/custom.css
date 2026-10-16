@@ -1,0 +1,213 @@
+/* Binbows Gothic, modern pass for Notepad Next (overrides the built-in npp.css)
+   Surfaces: base #0e0b14, raised #17121f, hover #1f1829, active #2a2136, line #3a2e4a
+   Text: #e6dcc6, muted #b3a9bd. One accent: #b48cff (focused tab only).
+   Radii: 6 controls, 8 tabs, 10 menus. Spacing: 2 4 6 8 12. */
+
+QMainWindow, QMainWindow::separator {
+    background: #0e0b14;
+}
+
+/* Menu bar */
+QMenuBar {
+    background: #0e0b14;
+    color: #e6dcc6;
+    padding: 4px 6px;
+    border: none;
+}
+QMenuBar::item {
+    padding: 6px 10px;
+    border-radius: 6px;
+    background: transparent;
+}
+QMenuBar::item:selected, QMenuBar::item:pressed {
+    background: #1f1829;
+}
+
+/* Drop-down menus */
+QMenu {
+    background: #17121f;
+    color: #e6dcc6;
+    border: 1px solid #2a2136;
+    border-radius: 10px;
+    padding: 6px;
+}
+QMenu::item {
+    padding: 6px 24px 6px 12px;
+    border-radius: 6px;
+    background: transparent;
+}
+QMenu::item:selected {
+    background: #2a2136;
+}
+QMenu::item:disabled {
+    color: #6e6180;
+}
+QMenu::separator {
+    height: 1px;
+    background: #2a2136;
+    margin: 6px 8px;
+}
+QMenu::icon {
+    padding-left: 8px;
+}
+
+/* Toolbar */
+QToolBar {
+    background: #0e0b14;
+    border: none;
+    padding: 2px 8px 6px 8px;
+    spacing: 2px;
+    qproperty-iconSize: 18px;
+}
+QToolBar::separator {
+    width: 1px;
+    background: #2a2136;
+    margin: 6px 6px;
+}
+QToolButton {
+    background: transparent;
+    border: 1px solid transparent;
+    border-radius: 6px;
+    padding: 4px;
+}
+QToolButton:hover {
+    background: #1f1829;
+}
+QToolButton:pressed {
+    background: #2a2136;
+}
+QToolButton:checked {
+    background: #2a2136;
+    border: 1px solid #3a2e4a;
+}
+
+/* Tab strip: floating rounded tabs */
+ads--CDockAreaWidget, ads--CDockContainerWidget, ads--CDockSplitter {
+    background: #0e0b14;
+}
+ads--CDockAreaTitleBar {
+    background: #0e0b14;
+    border: none;
+    padding: 0px 6px 6px 6px;
+}
+ads--CDockAreaTabBar, ads--CDockAreaTabBar > QScrollArea, ads--CDockAreaTabBar #tabsContainerWidget {
+    background: #0e0b14;
+}
+ads--CDockWidgetTab {
+    background: #17121f;
+    border: 1px solid #17121f;
+    border-radius: 8px;
+    margin: 0px 2px;
+    padding: 4px 6px 4px 10px;
+}
+ads--CDockAreaTabBar ads--CDockWidgetTab QWidget,
+ads--CDockAreaTabBar ads--CDockWidgetTab QLabel {
+    background: transparent;
+}
+ads--CDockWidgetTab ads--CElidingLabel,
+ads--CDockWidgetTab[activeTab="false"] QLabel {
+    color: #b3a9bd;
+    padding: 0px 4px;
+}
+ads--CDockWidgetTab:hover[activeTab="false"] {
+    background: #1f1829;
+    border: 1px solid #1f1829;
+}
+ads--CDockWidgetTab[activeTab="true"] {
+    background: #2a2136;
+    border: 1px solid #3a2e4a;
+}
+ads--CDockWidgetTab[focused="true"] {
+    background: #2a2136;
+    border: 1px solid #b48cff;
+}
+ads--CDockWidgetTab[activeTab="true"] ads--CElidingLabel,
+ads--CDockWidgetTab[focused="true"] ads--CElidingLabel {
+    color: #e6dcc6;
+}
+#tabCloseButton {
+    background: transparent;
+    border: none;
+    border-radius: 6px;
+    margin: 0px 0px 0px 4px;
+    padding: 2px;
+}
+#tabCloseButton:hover {
+    background: #3a2e4a;
+}
+
+/* Tab strip buttons (new tab, tab list, close) */
+ads--CTitleBarButton {
+    background: transparent;
+    border: none;
+    border-radius: 6px;
+    padding: 4px;
+}
+ads--CTitleBarButton:hover {
+    background: #1f1829;
+}
+
+/* Status bar */
+QStatusBar {
+    background: #0e0b14;
+    color: #b3a9bd;
+    border: none;
+    padding: 2px 8px;
+}
+QStatusBar::item {
+    border: none;
+}
+QStatusBar QLabel {
+    color: #b3a9bd;
+    padding: 2px 8px;
+}
+
+/* Slim scrollbars */
+QScrollBar:vertical {
+    background: #0e0b14;
+    width: 12px;
+    margin: 0px;
+    border: none;
+}
+QScrollBar:horizontal {
+    background: #0e0b14;
+    height: 12px;
+    margin: 0px;
+    border: none;
+}
+QScrollBar::handle:vertical {
+    background: #2a2136;
+    min-height: 32px;
+    border-radius: 4px;
+    margin: 2px 3px;
+}
+QScrollBar::handle:horizontal {
+    background: #2a2136;
+    min-width: 32px;
+    border-radius: 4px;
+    margin: 3px 2px;
+}
+QScrollBar::handle:hover {
+    background: #3a2e4a;
+}
+QScrollBar::add-line, QScrollBar::sub-line {
+    width: 0px;
+    height: 0px;
+    border: none;
+    background: none;
+}
+QScrollBar::add-page, QScrollBar::sub-page {
+    background: none;
+}
+QAbstractScrollArea::corner {
+    background: #0e0b14;
+}
+
+/* Tooltips */
+QToolTip {
+    background: #17121f;
+    color: #e6dcc6;
+    border: 1px solid #2a2136;
+    border-radius: 6px;
+    padding: 4px 8px;
+}

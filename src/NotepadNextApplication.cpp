@@ -38,6 +38,9 @@
 #include <QCommandLineParser>
 
 #include <QDirIterator>
+#include <QDir>
+#include <QFile>
+#include <QFileInfo>
 
 #ifdef Q_OS_WIN
 #include <Windows.h>
@@ -150,6 +153,13 @@ bool NotepadNextApplication::init()
     mad->setEnabled(true);
 
     luaState->executeFile(":/scripts/init.lua");
+
+    // Load the user's theme.lua next to the ini file, if there is one
+    const QString themePath = QDir(QFileInfo(settings->fileName()).absolutePath()).filePath("theme.lua");
+    if (QFile::exists(themePath)) {
+        qInfo() << "Loading theme:" << themePath;
+        luaState->executeFile(themePath);
+    }
     LuaExtension::Instance().Initialise(luaState->L, Q_NULLPTR);
 
     createNewWindow();
